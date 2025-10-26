@@ -32,6 +32,8 @@ partial class MainForm
         button1 = new System.Windows.Forms.Button();
         textBox1 = new System.Windows.Forms.TextBox();
         textBox2 = new System.Windows.Forms.TextBox();
+        textBox3 = new System.Windows.Forms.TextBox();
+        textBox4 = new System.Windows.Forms.TextBox();
         SuspendLayout();
         // 
         // button1
@@ -58,12 +60,29 @@ partial class MainForm
         textBox2.Size = new System.Drawing.Size(250, 23);
         textBox2.TabIndex = 2;
         // 
+        // textBox3
+        // 
+        textBox3.Location = new System.Drawing.Point(316, 14);
+        textBox3.Multiline = true;
+        textBox3.Name = "textBox3";
+        textBox3.Size = new System.Drawing.Size(468, 424);
+        textBox3.TabIndex = 3;
+        // 
+        // textBox4
+        // 
+        textBox4.Location = new System.Drawing.Point(35, 230);
+        textBox4.Name = "textBox4";
+        textBox4.Size = new System.Drawing.Size(244, 23);
+        textBox4.TabIndex = 4;
+        // 
         // MainForm
         // 
         AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
         AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
         BackColor = System.Drawing.SystemColors.Control;
         ClientSize = new System.Drawing.Size(800, 450);
+        Controls.Add(textBox4);
+        Controls.Add(textBox3);
         Controls.Add(textBox2);
         Controls.Add(textBox1);
         Controls.Add(button1);
@@ -73,6 +92,10 @@ partial class MainForm
         ResumeLayout(false);
         PerformLayout();
     }
+
+    private System.Windows.Forms.TextBox textBox4;
+
+    private System.Windows.Forms.TextBox textBox3;
 
     private System.Windows.Forms.TextBox textBox2;
 

@@ -3,7 +3,7 @@ using System.Drawing;
 using System.Windows.Forms;
 using Autotrophe;
 
-namespace SysAutoCorrect
+namespace Autotrophe
 {
     public class TrayApplicationContext : ApplicationContext
     {

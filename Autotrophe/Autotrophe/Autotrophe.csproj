@@ -8,4 +8,18 @@
         <ImplicitUsings>enable</ImplicitUsings>
     </PropertyGroup>
 
+    <ItemGroup>
+      <None Remove="Dictionary\words.txt" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Content Include="Dictionary\words.txt">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </Content>
+      <None Remove="Dictionary\1grams_english.csv" />
+      <Content Include="Dictionary\1grams_english.csv">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </Content>
+    </ItemGroup>
+
 </Project>
