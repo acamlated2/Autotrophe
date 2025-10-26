@@ -4,9 +4,7 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Windows.Forms;
 
-namespace SysAutoCorrect
-{
-    public class KeyboardHook : IDisposable
+public class KeyboardHook : IDisposable
     {
         // WinAPI constants
         private const int WH_KEYBOARD_LL = 13;
@@ -77,4 +75,3 @@ namespace SysAutoCorrect
         [DllImport("kernel32.dll", CharSet = CharSet.Auto, SetLastError = true)]
         private static extern IntPtr GetModuleHandle(string lpModuleName);
     }
-}

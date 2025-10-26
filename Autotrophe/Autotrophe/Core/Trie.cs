@@ -100,7 +100,7 @@ public class Trie
             results.Add((prefix, currentRow[^1], node.Frequency));
 
         // If any value in currentRow ≤ maxDistance -> keep exploring
-        if (Min(currentRow) <= maxDistance)
+        if (Min(currentRow) <= maxDistance && node.Children.Count > 0)
         {
             foreach (var kvp in node.Children)
             {

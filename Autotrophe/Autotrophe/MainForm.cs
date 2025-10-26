@@ -1,87 +1,67 @@
 using System.Text;
 using Autotrophe.Core;
-using SysAutoCorrect;
+using WindowsInput;
+using WindowsInput.Native;
 
 namespace Autotrophe;
 
 public partial class MainForm : Form
 {
-    private bool _enabled = false;
+    private bool _wordCompleted = false;
+    private readonly AutoCorrectEngine _engine;
     
-    private KeyboardHook? _hook;
-    
-    private readonly TypedBuffer _typedBuffer = new TypedBuffer();
-    
-    private static MainForm? _instance;
-    public static MainForm Instance => _instance ??= new MainForm();
-    
-    public MainForm()
+    public MainForm(AutoCorrectEngine engine)
     {
         InitializeComponent();
+        _engine = engine;
         
-        _typedBuffer.WordCompleted += TypedBuffer_WordCompleted;
+        _engine.KeyPressed += EngineKeyPressed;
+        _engine.WordCompleted += EngineWordCompleted;
+        _engine.SuggestionsFound += EngineSuggestionsFound;
     }
-
-    private void button1_Click(object sender, EventArgs e)
-    {
-        // _enabled = !_enabled;
-        // button1.Text = _enabled ? "Disable Autocorrect" : "Enable Autocorrect";
-        // MessageBox.Show("Autocorrect is now " + (_enabled ? "enabled" : "disabled"));
-        //
-        // if (_enabled)
-        // {
-        //     _hook = new KeyboardHook();
-        //     _hook.KeyDown += OnKeyDown;
-        //     _hook.Start();
-        // }
-        // else
-        // {
-        //     _hook?.Stop();
-        //     _hook = null;
-        // }
-    }
-
-    private void OnKeyDown(object? sender, Keys key)
-    {
-        textBox1.AppendText(key + " ");
-        
-        _typedBuffer.ProcessKey(key);
-    }
-
-    private void TypedBuffer_WordCompleted(object sender, string completedWord)
-    {
-        textBox2.Clear();
-        textBox2.AppendText(completedWord);
-        
-        string input = completedWord.ToLower();
-
-        if (DictionaryManager.Instance.GlobalTrie.Search(input)) return;
-        
-        var candidates = DictionaryManager.Instance.GlobalTrie.SearchSimilar(input, 2);
-
-        List<(string, int, long)> sortedCandidates =
-            candidates.OrderBy(c => c.Distance).ThenByDescending(c => c.Frequency).ToList();
-        
-        foreach (var (word, dist, frequency) in sortedCandidates)
-        {
-            AppendLog($"{word} (distance {dist}) (frequency {frequency})");
-        }
-
-        (string suggestedWord, int wordDistance, long wordFrequency) = sortedCandidates[0];
-        
-        textBox4.Clear();
-        textBox4.AppendText(suggestedWord);
-    }
-
+    
     private void MainForm_Load(object sender, EventArgs e)
     {
-        _hook = new KeyboardHook();
-        _hook.KeyDown += OnKeyDown;
-        _hook.Start();
+        
+    }
+    
+    private void EngineKeyPressed(string key)
+    {
+        if (_wordCompleted)
+            label2.Text = "";
+        
+        _wordCompleted = false;
+        
+        label2.Text += key + " ";
+    }
+    
+    private void EngineWordCompleted(string word)
+    {
+        // Update label on UI thread
+        if (InvokeRequired)
+        {
+            Invoke(new Action(() => label4.Text = word));
+        }
+        else
+        {
+            label4.Text = word;
+        }
     }
 
-    public void AppendLog(string text)
+    private void EngineSuggestionsFound(List<(string Word, int Distance, long Frequency)> suggestions)
     {
-        textBox3.AppendText(text + " ");
+        richTextBox1.Clear();
+        
+        if (suggestions.Count == 0)
+            return;
+        
+        foreach (var (word, dist, frequency) in suggestions)
+        {
+            richTextBox1.AppendText($"{word} (distance {dist}) (frequency {frequency})");
+        }
+        
+        (string suggestedWord, int wordDistance, long wordFrequency) = suggestions[0];
+        
+        label6.Text = suggestedWord;
     }
 }

@@ -29,79 +29,129 @@ partial class MainForm
     /// </summary>
     private void InitializeComponent()
     {
-        button1 = new System.Windows.Forms.Button();
-        textBox1 = new System.Windows.Forms.TextBox();
-        textBox2 = new System.Windows.Forms.TextBox();
-        textBox3 = new System.Windows.Forms.TextBox();
-        textBox4 = new System.Windows.Forms.TextBox();
+        label1 = new System.Windows.Forms.Label();
+        label2 = new System.Windows.Forms.Label();
+        label3 = new System.Windows.Forms.Label();
+        label4 = new System.Windows.Forms.Label();
+        label5 = new System.Windows.Forms.Label();
+        label6 = new System.Windows.Forms.Label();
+        label7 = new System.Windows.Forms.Label();
+        richTextBox1 = new System.Windows.Forms.RichTextBox();
         SuspendLayout();
         // 
-        // button1
+        // label1
         // 
-        button1.Location = new System.Drawing.Point(35, 31);
-        button1.Name = "button1";
-        button1.Size = new System.Drawing.Size(103, 38);
-        button1.TabIndex = 0;
-        button1.Text = "Enable Autocorrect";
-        button1.UseVisualStyleBackColor = true;
-        button1.Click += button1_Click;
+        label1.Font = new System.Drawing.Font("Bahnschrift", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)0));
+        label1.ForeColor = System.Drawing.Color.WhiteSmoke;
+        label1.Location = new System.Drawing.Point(25, 25);
+        label1.Name = "label1";
+        label1.Size = new System.Drawing.Size(254, 20);
+        label1.TabIndex = 5;
+        label1.Text = "Detected Characters";
         // 
-        // textBox1
+        // label2
         // 
-        textBox1.Location = new System.Drawing.Point(35, 124);
-        textBox1.Name = "textBox1";
-        textBox1.Size = new System.Drawing.Size(246, 23);
-        textBox1.TabIndex = 1;
+        label2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+        label2.Font = new System.Drawing.Font("Bahnschrift", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)0));
+        label2.ForeColor = System.Drawing.Color.Gainsboro;
+        label2.Location = new System.Drawing.Point(25, 50);
+        label2.Name = "label2";
+        label2.Size = new System.Drawing.Size(254, 20);
+        label2.TabIndex = 6;
         // 
-        // textBox2
+        // label3
         // 
-        textBox2.Location = new System.Drawing.Point(30, 180);
-        textBox2.Name = "textBox2";
-        textBox2.Size = new System.Drawing.Size(250, 23);
-        textBox2.TabIndex = 2;
+        label3.Font = new System.Drawing.Font("Bahnschrift", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)0));
+        label3.ForeColor = System.Drawing.Color.WhiteSmoke;
+        label3.Location = new System.Drawing.Point(25, 75);
+        label3.Name = "label3";
+        label3.Size = new System.Drawing.Size(254, 20);
+        label3.TabIndex = 7;
+        label3.Text = "Detected Word";
         // 
-        // textBox3
+        // label4
         // 
-        textBox3.Location = new System.Drawing.Point(316, 14);
-        textBox3.Multiline = true;
-        textBox3.Name = "textBox3";
-        textBox3.Size = new System.Drawing.Size(468, 424);
-        textBox3.TabIndex = 3;
+        label4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+        label4.Font = new System.Drawing.Font("Bahnschrift", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)0));
+        label4.ForeColor = System.Drawing.Color.Gainsboro;
+        label4.Location = new System.Drawing.Point(25, 100);
+        label4.Name = "label4";
+        label4.Size = new System.Drawing.Size(254, 20);
+        label4.TabIndex = 8;
         // 
-        // textBox4
+        // label5
         // 
-        textBox4.Location = new System.Drawing.Point(35, 230);
-        textBox4.Name = "textBox4";
-        textBox4.Size = new System.Drawing.Size(244, 23);
-        textBox4.TabIndex = 4;
+        label5.Font = new System.Drawing.Font("Bahnschrift", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)0));
+        label5.ForeColor = System.Drawing.Color.WhiteSmoke;
+        label5.Location = new System.Drawing.Point(25, 125);
+        label5.Name = "label5";
+        label5.Size = new System.Drawing.Size(254, 20);
+        label5.TabIndex = 9;
+        label5.Text = "Suggested Word";
+        // 
+        // label6
+        // 
+        label6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+        label6.Font = new System.Drawing.Font("Bahnschrift", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)0));
+        label6.ForeColor = System.Drawing.Color.Gainsboro;
+        label6.Location = new System.Drawing.Point(25, 150);
+        label6.Name = "label6";
+        label6.Size = new System.Drawing.Size(254, 20);
+        label6.TabIndex = 10;
+        // 
+        // label7
+        // 
+        label7.Font = new System.Drawing.Font("Bahnschrift", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)0));
+        label7.ForeColor = System.Drawing.Color.WhiteSmoke;
+        label7.Location = new System.Drawing.Point(316, 25);
+        label7.Name = "label7";
+        label7.Size = new System.Drawing.Size(472, 20);
+        label7.TabIndex = 11;
+        label7.Text = "Word Candidates";
+        // 
+        // richTextBox1
+        // 
+        richTextBox1.BackColor = System.Drawing.Color.FromArgb(((int)((byte)43)), ((int)((byte)45)), ((int)((byte)48)));
+        richTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+        richTextBox1.ForeColor = System.Drawing.Color.Gainsboro;
+        richTextBox1.Location = new System.Drawing.Point(316, 62);
+        richTextBox1.Name = "richTextBox1";
+        richTextBox1.ReadOnly = true;
+        richTextBox1.Size = new System.Drawing.Size(472, 376);
+        richTextBox1.TabIndex = 12;
+        richTextBox1.Text = "";
         // 
         // MainForm
         // 
         AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
         AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-        BackColor = System.Drawing.SystemColors.Control;
+        BackColor = System.Drawing.Color.FromArgb(((int)((byte)43)), ((int)((byte)45)), ((int)((byte)48)));
         ClientSize = new System.Drawing.Size(800, 450);
-        Controls.Add(textBox4);
-        Controls.Add(textBox3);
-        Controls.Add(textBox2);
-        Controls.Add(textBox1);
-        Controls.Add(button1);
+        Controls.Add(richTextBox1);
+        Controls.Add(label7);
+        Controls.Add(label6);
+        Controls.Add(label5);
+        Controls.Add(label4);
+        Controls.Add(label3);
+        Controls.Add(label2);
+        Controls.Add(label1);
+        Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)0));
         Location = new System.Drawing.Point(15, 15);
         Text = "Autotrophe";
         Load += MainForm_Load;
         ResumeLayout(false);
-        PerformLayout();
     }
 
-    private System.Windows.Forms.TextBox textBox4;
+    private System.Windows.Forms.RichTextBox richTextBox1;
 
-    private System.Windows.Forms.TextBox textBox3;
+    private System.Windows.Forms.Label label2;
+    private System.Windows.Forms.Label label3;
+    private System.Windows.Forms.Label label4;
+    private System.Windows.Forms.Label label5;
+    private System.Windows.Forms.Label label6;
+    private System.Windows.Forms.Label label7;
 
-    private System.Windows.Forms.TextBox textBox2;
-
-    private System.Windows.Forms.TextBox textBox1;
-
-    private System.Windows.Forms.Button button1;
+    private System.Windows.Forms.Label label1;
 
     #endregion
 }
