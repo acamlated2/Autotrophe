@@ -31,7 +31,12 @@ public class AutoCorrectEngine
         string input = completedWord.ToLower();
 
         if (DictionaryManager.Instance.GlobalTrie.Search(input))
+        {
+            List<(string, int, long)> foundWord = new List<(string, int, long)>
+                { ("Word Found: " + input, 0, DictionaryManager.Instance.GlobalTrie.GetFrequency(input)) };
+            SuggestionsFound?.Invoke(foundWord);
             return;
+        }
 
         var candidates = DictionaryManager.Instance.GlobalTrie.SearchSimilar(input, 2);
         if (candidates.Count == 0)

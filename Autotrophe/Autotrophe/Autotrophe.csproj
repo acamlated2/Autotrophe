@@ -20,6 +20,10 @@
       <Content Include="Dictionary\1grams_english.csv">
         <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       </Content>
+      <None Remove="Dictionary\Apostrophes.csv" />
+      <Content Include="Dictionary\Apostrophes.csv">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </Content>
     </ItemGroup>
 
     <ItemGroup>

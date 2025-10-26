@@ -11,6 +11,7 @@ namespace Autotrophe
         static void Main()
         {
             DictionaryManager.Instance.LoadFromFile("Dictionary/1grams_english.csv");
+            //DictionaryManager.Instance.LoadFromFile("Dictionary/Apostrophes.csv");
             DictionaryManager.Instance.LoadFromFile("Dictionary/words.txt");
             
             ApplicationConfiguration.Initialize();

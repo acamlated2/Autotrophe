@@ -95311,7 +95311,6 @@ canso
 cansos
 canst
 canstick
-cant
 cant hook
 cantabank
 cantabanks
@@ -181434,7 +181433,6 @@ hectorship
 hectorships
 hectostere
 hectosteres
-hed
 heddle
 heddle
 heddled
@@ -182740,7 +182738,6 @@ herems
 hereness
 hereof
 hereon
-heres
 heresiarch
 heresiarchs
 heresies
@@ -187500,7 +187497,6 @@ howling
 howlingly
 howlings
 howls
-hows
 howso
 howsoever
 howsomever
@@ -191364,7 +191360,6 @@ illywhacker
 illywhackers
 ilmenite
 ilmenites
-im
 image
 image orthicon
 image orthicons
@@ -201537,7 +201532,6 @@ ity
 ium
 iure
 iv
-ive
 ivermectin
 ivermectins
 ivied
@@ -211587,7 +211581,6 @@ lethean
 lethes
 lethied
 lethiferous
-lets
 lettable
 letted
 letter
@@ -219782,7 +219775,6 @@ manriding train
 manriding trains
 manrope
 manropes
-mans
 mansard
 mansard
 mansard roof
@@ -223387,8 +223379,6 @@ menorrhea
 menorrheas
 menorrhoea
 menorrhoeas
-mens
-mens
 mens rea
 mensa
 mensae
@@ -342660,7 +342650,6 @@ thereness
 thereof
 thereon
 thereout
-theres
 therethrough
 thereto
 theretofore
@@ -372516,7 +372505,6 @@ whencever
 whene'er
 whenever
 whenever
-whens
 whensoe'er
 whensoever
 whensoever
@@ -372550,7 +372538,6 @@ whereness
 whereof
 whereon
 whereout
-wheres
 whereso
 wheresoe'er
 wheresoever
@@ -373495,7 +373482,6 @@ whortleberries
 whortleberry
 whortles
 whorts
-whos
 whose
 whose
 whose
@@ -373531,7 +373517,6 @@ whydah
 whydah's
 whydahs
 whyever
-whys
 whys and wherefores
 wicca
 wiccan
@@ -375222,7 +375207,6 @@ womanlinesses
 womanly
 womanpower
 womanpowers
-womans
 womb
 womb's
 wombat
@@ -375321,9 +375305,6 @@ wonning
 wonning
 wonnings
 wons
-wont
-wont
-wont
 wonted
 wonted
 wontedly
@@ -379377,3 +379358,104 @@ zzz
 études
 étui
 étuis
+I'm
+you're
+he's
+she's
+it's
+we're
+they're
+don't
+can't
+won't
+isn't
+aren't
+wasn't
+weren't
+haven't
+hasn't
+hadn't
+I'll
+you'll
+he'll
+she'll
+we'll
+they'll
+I've
+you've
+we've
+they've
+I'd
+you'd
+he'd
+she'd
+we'd
+they'd
+what's
+that's
+where's
+who's
+how's
+there's
+when's
+why's
+here's
+couldn't
+shouldn't
+wouldn't
+mustn't
+mightn't
+daren't
+let's
+ain't
+d'ye
+o'clock
+ma'am
+y'all
+gimme
+gotta
+wanna
+c'mon
+'cause
+'em
+rock 'n' roll
+ne'er
+e'er
+o'er
+'tis
+'twas
+world's
+God's
+man's
+woman's
+day's
+year's
+life's
+time's
+city's
+country's
+house's
+friend's
+father's
+mother's
+brother's
+sister's
+king's
+queen's
+president's
+company's
+government's
+team's
+book's
+car's
+today's
+someone's
+nobody's
+everybody's
+anyone's
+something's
+nothing's
+people's
+children's
+men's
+women's
