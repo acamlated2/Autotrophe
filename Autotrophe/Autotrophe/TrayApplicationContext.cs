@@ -21,7 +21,7 @@ public class TrayApplicationContext : ApplicationContext
         // Create the tray icon
         _tray = new NotifyIcon
         {
-            Icon = SystemIcons.Application, // default app icon
+            Icon = new Icon("Icons/Autotrophe.ico"),
             Text = "Autotrophe",
             Visible = true,
             ContextMenuStrip = new ContextMenuStrip()

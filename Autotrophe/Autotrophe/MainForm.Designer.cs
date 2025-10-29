@@ -37,6 +37,8 @@ partial class MainForm
         label6 = new System.Windows.Forms.Label();
         label7 = new System.Windows.Forms.Label();
         richTextBox1 = new System.Windows.Forms.RichTextBox();
+        label8 = new System.Windows.Forms.Label();
+        checkBox1 = new System.Windows.Forms.CheckBox();
         SuspendLayout();
         // 
         // label1
@@ -121,12 +123,34 @@ partial class MainForm
         richTextBox1.TabIndex = 12;
         richTextBox1.Text = "";
         // 
+        // label8
+        // 
+        label8.Font = new System.Drawing.Font("Bahnschrift", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)0));
+        label8.ForeColor = System.Drawing.Color.WhiteSmoke;
+        label8.Location = new System.Drawing.Point(25, 418);
+        label8.Name = "label8";
+        label8.Size = new System.Drawing.Size(254, 20);
+        label8.TabIndex = 13;
+        label8.Text = "Run at Startup";
+        // 
+        // checkBox1
+        // 
+        checkBox1.Location = new System.Drawing.Point(267, 423);
+        checkBox1.Name = "checkBox1";
+        checkBox1.Size = new System.Drawing.Size(12, 15);
+        checkBox1.TabIndex = 14;
+        checkBox1.Text = "checkBox1";
+        checkBox1.UseVisualStyleBackColor = true;
+        checkBox1.CheckedChanged += checkBox1_CheckedChanged;
+        // 
         // MainForm
         // 
         AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
         AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
         BackColor = System.Drawing.Color.FromArgb(((int)((byte)43)), ((int)((byte)45)), ((int)((byte)48)));
         ClientSize = new System.Drawing.Size(800, 450);
+        Controls.Add(checkBox1);
+        Controls.Add(label8);
         Controls.Add(richTextBox1);
         Controls.Add(label7);
         Controls.Add(label6);
@@ -141,6 +165,10 @@ partial class MainForm
         Load += MainForm_Load;
         ResumeLayout(false);
     }
+
+    private System.Windows.Forms.CheckBox checkBox1;
+
+    private System.Windows.Forms.Label label8;
 
     private System.Windows.Forms.RichTextBox richTextBox1;
 

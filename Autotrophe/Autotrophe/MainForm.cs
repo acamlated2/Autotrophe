@@ -1,5 +1,6 @@
 using System.Text;
 using Autotrophe.Core;
+using Microsoft.Win32;
 using WindowsInput;
 using WindowsInput.Native;
 
@@ -9,6 +10,8 @@ public partial class MainForm : Form
 {
     private bool _wordCompleted = false;
     private readonly AutoCorrectEngine _engine;
+    
+    private const string _appName = "Autotrophe";
     
     public MainForm(AutoCorrectEngine engine)
     {
@@ -22,7 +25,9 @@ public partial class MainForm : Form
     
     private void MainForm_Load(object sender, EventArgs e)
     {
+        this.Icon = new Icon("Icons/Autotrophe.ico");
         
+        checkBox1.Checked = IsStartupEnabled();
     }
     
     private void EngineKeyPressed(string key)
@@ -63,5 +68,37 @@ public partial class MainForm : Form
         (string suggestedWord, int wordDistance, long wordFrequency) = suggestions[0];
         
         label6.Text = suggestedWord;
+    }
+
+    private void SetStartup(bool enable)
+    {
+        string runKey = @"SOFTWARE\Microsoft\Windows\CurrentVersion\Run";
+        using (RegistryKey key = Registry.CurrentUser.OpenSubKey(runKey, true))
+        {
+            if (enable)
+            {
+                key.SetValue(_appName, Application.ExecutablePath);
+            }
+            else
+            {
+                {
+                    key.DeleteValue(_appName, false);
+                }
+            }
+        }
+    }
+
+    private bool IsStartupEnabled()
+    {
+        string runKey = @"SOFTWARE\Microsoft\Windows\CurrentVersion\Run";
+        using (RegistryKey key = Registry.CurrentUser.OpenSubKey(runKey, true))
+        {
+            return key?.GetValue(_appName) != null;
+        }
+    }
+
+    private void checkBox1_CheckedChanged(object sender, EventArgs e)
+    {
+        SetStartup(checkBox1.Checked);
     }
 }

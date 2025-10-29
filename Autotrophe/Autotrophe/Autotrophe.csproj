@@ -6,6 +6,7 @@
         <Nullable>enable</Nullable>
         <UseWindowsForms>true</UseWindowsForms>
         <ImplicitUsings>enable</ImplicitUsings>
+        <ApplicationIcon>Icons\Autotrophe.ico</ApplicationIcon>
     </PropertyGroup>
 
     <ItemGroup>
@@ -24,10 +25,18 @@
       <Content Include="Dictionary\Apostrophes.csv">
         <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       </Content>
+      <None Remove="Icons\Autotrophe.ico" />
+      <Content Include="Icons\Autotrophe.ico">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Content>
     </ItemGroup>
 
     <ItemGroup>
       <PackageReference Include="InputSimulator" Version="1.0.4" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Folder Include="Icons\" />
     </ItemGroup>
 
 </Project>
